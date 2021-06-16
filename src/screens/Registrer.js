@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, Alert, StyleSheet, Image } from 'react-n
 import { useForm, Controller } from "react-hook-form";
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Registrer =  ({navigation}) => {
+const Registrer =  ({ navigation }) => {
 
     const { control, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
@@ -43,7 +43,7 @@ const Registrer =  ({navigation}) => {
                 rules={{ required: true }}
                 defaultValue=""
             />
-            {errors.auteur && <Text>This is required.</Text>}
+            {errors.auteur && <Text style={styles.errors}>This is required.</Text>}
             
             {/* Categories --------------------------------------------------------*/}
             <Controller
@@ -61,7 +61,7 @@ const Registrer =  ({navigation}) => {
                 rules={{ required: true }}
                 defaultValue=""
             />
-            {errors.categorie && <Text>This is required.</Text>}
+            {errors.categorie && <Text style={styles.errors}>This is required.</Text>}
 
             {/* Titre ----------------------------------------------------------------*/}
             <Controller
@@ -79,7 +79,7 @@ const Registrer =  ({navigation}) => {
                 rules={{ required: true }}
                 defaultValue=""
             />
-            {errors.titre&& <Text>This is required.</Text>}
+            {errors.titre && <Text style={styles.errors}>This is required.</Text>}
 
 
             {/* Bouton --------------------------------------------------*/}
@@ -102,7 +102,7 @@ const styles = StyleSheet.create ({
         borderWidth: 0.2,
         borderColor: '#357180',
         borderRadius:5,
-        marginBottom: 20,
+        marginBottom: 14,
         paddingLeft: 8 
     },
     title: {
@@ -139,7 +139,10 @@ const styles = StyleSheet.create ({
         height: '70%',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    errors: {
+        color: '#D0021B',
+        fontSize: 13,
     }
-    
 })
 export default Registrer;

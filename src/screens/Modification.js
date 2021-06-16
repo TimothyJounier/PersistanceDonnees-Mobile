@@ -1,2 +1,12 @@
 import React from 'react';
-import { } from 'react-native';
+import { View } from 'react-native';
+
+const Modification = ({navigation}) => {
+    return (
+        <View>
+            <Text>Hello</Text>
+        </View>
+    )
+}
+
+export default Modification;

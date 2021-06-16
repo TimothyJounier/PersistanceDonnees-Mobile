@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet} from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
+import ListItem from '../components/List';
 
 const Details =  ({navigation}) => {
     return (
@@ -8,12 +9,10 @@ const Details =  ({navigation}) => {
             <View style={styles.containerText}>
                 <Text style={styles.text}>Vos livres</Text>
             </View>
-            <View style={styles.containerList}>
-                <FlatList>
-
-                </FlatList>
+                <View style={styles.containerList}>
+                    <ListItem />
             </View>
-        </View>
+    </View>
     )
 }
 
@@ -27,9 +26,14 @@ const styles = StyleSheet.create ({
     containerList: {
         width: '100%',
         height: '80%',
+        alignItems: 'center'
     },
     text: {
-        fontSize: 25
+        fontSize: 25,
+        color: '#357180'
+    },
+    btnList: {
+        backgroundColor: 'red'
     }
 })
 
